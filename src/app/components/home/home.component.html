@@ -1,0 +1,17 @@
+<div *ngIf="data.length > 0">
+    <h2>Lista de Embalses</h2>
+    <div class="embalse-grid">
+      <div class="embalse-card" *ngFor="let embalse of data">
+        <!-- Imagen del embalse -->
+        <img [src]="embalse.imagen?.url" alt="{{ embalse.nombre }}" class="embalse-image" />
+        
+        <h3>{{ embalse.nombre }}</h3>
+        <p><strong>Ubicación:</strong> {{ embalse.ubicacion }}</p>
+        <p><strong>Capacidad:</strong> {{ embalse.capacidad }} m³</p>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="data.length === 0">
+    <p>No se encontraron embalses.</p>
+  </div>

@@ -1,0 +1,86 @@
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;  /* Centra verticalmente el logo y el título */
+  }
+  
+  .logo {
+    width: 4em;  /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+    margin-right: 10px;  /* Espacio entre el logo y el título */
+  }
+  
+  .title {
+    font-size: 24px;  /* Ajusta el tamaño del título */
+    font-weight: bold;
+    margin: 0;  /* Elimina márgenes por defecto */
+    color: #fff;
+  }
+  
+  .nav {
+    flex-grow: 1;
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin: 0 15px;
+  }
+  
+  .nav-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav-item a:hover, .nav-item .active {
+    color: #ff9900;
+  }
+  
+  .user-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-actions .btn-login {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .user-actions .btn-login:hover {
+    background-color: #e68900;
+  }
+  
+  .user-actions i {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }

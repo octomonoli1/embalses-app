@@ -1,0 +1,36 @@
+<header class="header">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo-container">
+        <img src="logo-embalse.png" alt="Logo" class="logo">
+        <h1 class="title">Embalses.net</h1>  <!-- Aquí va el título -->
+      </div>
+  
+      <!-- Menú de navegación -->
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a routerLink="/home" routerLinkActive="active">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/about" routerLinkActive="active">Sobre nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/services" routerLinkActive="active">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/contact" routerLinkActive="active">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+  
+      <!-- Iconos de usuario o carrito (Opcional) -->
+      <div class="user-actions">
+        <button class="btn-login" (click)="login()">Iniciar sesión</button>
+        <a routerLink="/cart">
+          <i class="fa fa-shopping-cart"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+  
