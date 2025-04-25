@@ -1,6 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ChangeDetectorRef, Component, OnInit, TransferState } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { Embalse } from '../../model/embalse';
+import { Observable, tap } from 'rxjs';
+import { EmbalsesService } from '../../services/embalses.service';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +12,16 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent{
 
-  data: any = [];
-  embalsesUrl: string = "https://portalrediam.cica.es/embalses/api/json/embalses";
-  estadoUrl: string = "https://portalrediam.cica.es/embalses/api/json/andalucia/2025-04-09";
+  data: Embalse[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private embalseService: EmbalsesService) {}
 
   ngOnInit(): void {
-    this.http.get('embalsesUrl').subscribe(data => this.data = data);
+    this.embalseService.getEmbalses().subscribe((data) =>{
+      this.data = data;
+    });
   }
 
 }

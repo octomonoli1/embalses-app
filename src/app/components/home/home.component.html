@@ -1,17 +1,18 @@
-<div *ngIf="data.length > 0">
-    <h2>Lista de Embalses</h2>
+<div *ngIf="data && data.length > 0">
+  <h2>Lista de Embalses</h2>
     <div class="embalse-grid">
       <div class="embalse-card" *ngFor="let embalse of data">
         <!-- Imagen del embalse -->
-        <img [src]="embalse.imagen?.url" alt="{{ embalse.nombre }}" class="embalse-image" />
+        <img src="https://media.istockphoto.com/id/1240761905/es/vector/habitación-en-blanco-y-negro.jpg?s=612x612&w=0&k=20&c=sqHmFuUYTdkTFaYRuzNdk00Fvl7Dt68VM_1XXceZQRQ=" alt="{{ embalse.nombre }}" class="embalse-image" />
         
         <h3>{{ embalse.nombre }}</h3>
-        <p><strong>Ubicación:</strong> {{ embalse.ubicacion }}</p>
-        <p><strong>Capacidad:</strong> {{ embalse.capacidad }} m³</p>
+        <p><strong>Ubicación:</strong> {{ embalse.provincia }}</p>
+        <p><strong>Capacidad:</strong> {{ embalse.capacidad }} hm³</p>
+        <p><strong>Nivel actual:</strong> {{ embalse.capacidadActual / embalse.capacidad * 100 | number: '1.0-2' }} %</p>
       </div>
     </div>
-  </div>
-  
-  <div *ngIf="data.length === 0">
-    <p>No se encontraron embalses.</p>
-  </div>
+</div>
+
+<div *ngIf="data && data.length === 0">
+  <p>No se encontraron embalses</p>
+</div>
